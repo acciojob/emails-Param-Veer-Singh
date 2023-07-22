@@ -30,7 +30,7 @@ public class Workspace extends Gmail{
         if(calendar.size() == 0)return 0;
         else{
             Collections.sort(calendar,(a,b)->{
-               return a.getStartTime().compareTo(b.getStartTime());
+               return a.getEndTime().compareTo(b.getEndTime());
             });
             int j = 0;
             for (int i = 1; i < calendar.size() ; i++) {
