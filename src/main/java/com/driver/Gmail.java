@@ -1,5 +1,6 @@
 package com.driver;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -65,6 +66,7 @@ public class Gmail extends Email {
         int count = 0;
         for(Mail mail : inbox){
             if(mail.getDate().after(start) && mail.getDate().before(end))count++;
+            else if(mail.getDate().compareTo(start) == 0 || mail.getDate().compareTo(end) == 0)count++;
         }
         return count;
     }
